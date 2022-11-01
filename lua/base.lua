@@ -1,6 +1,7 @@
 vim.cmd[[autocmd VimEnter * NERDTree]]
 --vim.cmd[[set guifont="BitstreamVeraSansMono"]]
 vim.cmd[[set ruler]]
+vim.cmd[[let NERDTreeShowHidden=1]]
 --vim.cmd[[set clipboard+=unnamedplus]]
 
 vim.o.completeopt="menuone,noinsert,noselect"
@@ -16,12 +17,11 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.backup = false
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
-vim.opt.showcmd = true
+vim.opt.showcmd = true 
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
-vim.opt.shell = 'fish'
 vim.opt.backupskip = { '/tmp/*', '/private/tmp/*' }
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
