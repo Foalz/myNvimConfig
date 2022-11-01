@@ -2,7 +2,7 @@ vim.cmd[[autocmd VimEnter * NERDTree]]
 --vim.cmd[[set guifont="BitstreamVeraSansMono"]]
 vim.cmd[[set ruler]]
 vim.cmd[[let NERDTreeShowHidden=1]]
---vim.cmd[[set clipboard+=unnamedplus]]
+vim.cmd[[set splitright]]
 
 vim.o.completeopt="menuone,noinsert,noselect"
 vim.scriptencoding = 'utf-8'

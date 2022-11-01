@@ -1,6 +1,14 @@
 local keymap = vim.api
 
+--[TERMINAL MODE]
+  
+  --Escape from terminal mode to normal mode
+  vim.cmd[[tnoremap <Esc> <C-\><C-n>]] --Lua gives error with \ bar 
+
 --[NORMAL MODE]
+
+  --Open a terminal
+  keymap.nvim_set_keymap('n', '<Leader>t', ':50vsp <bar> :terminal <CR>', { noremap = true })
 
 	--Saving and quit
 	keymap.nvim_set_keymap('n', '<Leader>w', ':w<CR>', { noremap = true })
