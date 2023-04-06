@@ -3,6 +3,9 @@ vim.cmd[[autocmd VimEnter * NERDTree]]
 vim.cmd[[set ruler]]
 vim.cmd[[let NERDTreeShowHidden=1]]
 vim.cmd[[set splitright]]
+vim.cmd("set background=dark")
+vim.cmd("set t_Co=256")
+vim.cmd("set termguicolors")
 
 vim.o.completeopt="menuone,noinsert,noselect"
 vim.scriptencoding = 'utf-8'

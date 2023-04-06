@@ -19,17 +19,12 @@ return require('packer').startup(function()
 	use 'yggdroot/indentline'
 	use 'scrooloose/nerdcommenter'
 	use 'mhinz/vim-signify'
-	use 'ryanoasis/vim-devicons'
-
-	--highlighting
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+  use 'ryanoasis/vim-devicons'
 
 	--Themes 
-	use 'morhetz/gruvbox'
-	use 'tomasiser/vim-code-dark'
+  use 'morhetz/gruvbox'
+  use 'tomasiser/vim-code-dark'
+  use 'tomasr/molokai'
 
 	-- File Explorer
 	use 'scrooloose/NERDTree'
@@ -42,22 +37,8 @@ return require('packer').startup(function()
 	use 'ggreer/the_silver_searcher'    
 
 	--statusline
-	--use 'maximbaz/lightline-ale'
-	--use 'itchyny/lightline.vim'
-	--use 'itchyny/vim-gitbranch'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  -- Pictograms & icons picker
-  use "stevearc/dressing.nvim"
-  use({
-    "ziontee113/icon-picker.nvim",
-    config = function()
-      require("icon-picker").setup({
-        disable_legacy_commands = true
-      })
-    end,
-  })
-
 end)

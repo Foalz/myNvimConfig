@@ -56,4 +56,4 @@ local keymap = vim.api
 --[VISUAL MODE]
 
 	-- Copy selected text
-	keymap.nvim_set_keymap('v', 'c', '"y', { noremap = true })
+	keymap.nvim_set_keymap('v', 'c', 'y', { noremap = true })
