@@ -1,3 +1,7 @@
 {
-	"snippets.userSnippetsDirectory": "~/.config/nvim/snips" 
+	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+	"snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  }
 }

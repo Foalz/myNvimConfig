@@ -52,6 +52,27 @@ local keymap = vim.api
 
 	-- Toggle AG 
 	keymap.nvim_set_keymap('n', '<Leader>p', ':Ag<CR>', { noremap = true })
+
+  -- Open new tab in NERDTREE 
+	keymap.nvim_set_keymap('n', ';', ':tabnew<bar> :NERDTree<CR>', { noremap = true })
+
+  -- Open terminal in new tab in NERDTREE 
+	keymap.nvim_set_keymap('n', 'tm', ':tabnew<bar> :terminal <CR> <bar> i', { noremap = true })
+
+  -- Left tab in NERDTREE 
+	keymap.nvim_set_keymap('n', ',', ':tabprevious<CR>', { noremap = true })
+
+  -- Right tab in NERDTREE 
+	keymap.nvim_set_keymap('n', '.', ':tabnext<CR>', { noremap = true })
+
+  -- Close current tab in NERDTREE 
+	keymap.nvim_set_keymap('n', '/', ':tabclose<CR>', { noremap = true })
+
+  -- Find
+	keymap.nvim_set_keymap('n', '<Leader>f', '/', { noremap = true })
+
+  --Show filepath
+	keymap.nvim_set_keymap('n', 'z', '1<C-g>', { noremap = true })
 	
 --[VISUAL MODE]
 

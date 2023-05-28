@@ -1,4 +1,6 @@
 vim.cmd[[autocmd VimEnter * NERDTree]]
+vim.cmd[[syntax on]]
+vim.cmd[[filetype on]]
 --vim.cmd[[set guifont="BitstreamVeraSansMono"]]
 vim.cmd[[set ruler]]
 vim.cmd[[let NERDTreeShowHidden=1]]

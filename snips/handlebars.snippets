@@ -24,32 +24,18 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet afi "Fat arrow function in Javascript" i
-(${0:${VISUAL}element}) => {  }
-endsnippet
-
-snippet afc "Fat arrow function in Javascript" i
-() => {
-	${0:${VISUAL}}
-}
-endsnippet
-
-snippet afcc "Fat arrow function in Javascript (With variable)" i
-(${0:${VISUAL}res}) => {
-	
-}
-endsnippet
-
-snippet clg "console.log" i
-console.log(${0:${VISUAL}message})
-endsnippet
-
-snippet rfc "React functional component" i
-export default function ${0:${VISUAL}ComponentName}() {
-	return(
-		<>
-
-		</>
-	)
-}
+snippet html:5 "HTML5 full structure" i
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>${0:${VISUAL}title}</title>
+		<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>Hello world!</h1>
+</body>
+</html>
 endsnippet
