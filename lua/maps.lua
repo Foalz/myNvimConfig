@@ -8,7 +8,7 @@ local keymap = vim.api
 --[NORMAL MODE]
 
   --Open a terminal
-  keymap.nvim_set_keymap('n', '<Leader>t', ':50vsp <bar> :terminal <CR>', { noremap = true })
+  --keymap.nvim_set_keymap('n', '<Leader>t', ':50vsp <bar> :terminal <CR>', { noremap = true })
 
 	--Saving and quit
 	keymap.nvim_set_keymap('n', '<Leader>w', ':w<CR>', { noremap = true })
@@ -57,7 +57,13 @@ local keymap = vim.api
 	keymap.nvim_set_keymap('n', ';', ':tabnew<bar> :NERDTree<CR>', { noremap = true })
 
   -- Open terminal in new tab in NERDTREE 
-	keymap.nvim_set_keymap('n', 'tm', ':tabnew<bar> :terminal <CR> <bar> i', { noremap = true })
+	--keymap.nvim_set_keymap('n', 'tm', ':tabnew<bar> :terminal <CR> <bar> i', { noremap = true })
+
+  keymap.nvim_set_keymap('n', '1<Leader>t', ':1:ToggleTerm<CR>i', { noremap = true })
+  keymap.nvim_set_keymap('n', '2<Leader>t', ':2:ToggleTerm<CR>i', { noremap = true })
+  keymap.nvim_set_keymap('n', '3<Leader>t', ':3:ToggleTerm<CR>i', { noremap = true })
+  keymap.nvim_set_keymap('n', '1<Leader>t', ':1:ToggleTerm<CR>i', { noremap = true })
+  keymap.nvim_set_keymap('n', '<C-5>', ':1:ToggleTerm<CR>i', { noremap = true })
 
   -- Left tab in NERDTREE 
 	keymap.nvim_set_keymap('n', ',', ':tabprevious<CR>', { noremap = true })
@@ -66,7 +72,7 @@ local keymap = vim.api
 	keymap.nvim_set_keymap('n', '.', ':tabnext<CR>', { noremap = true })
 
   -- Close current tab in NERDTREE 
-	keymap.nvim_set_keymap('n', '/', ':tabclose<CR>', { noremap = true })
+  keymap.nvim_set_keymap('n', '=', ':tabclose<CR>', { noremap = true })
 
   -- Find
 	keymap.nvim_set_keymap('n', '<Leader>f', '/', { noremap = true })

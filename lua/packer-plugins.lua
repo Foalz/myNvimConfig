@@ -8,6 +8,10 @@ return require('packer').startup(function()
       branch = 'release',
       run = ':CocInstall coc-json coc-tsserver coc-snippets coc-html coc-xml coc-yaml coc-html-css-support'
     }
+  --Terminal
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+    end}
 
 	--Typing
     use 'tpope/vim-surround'
@@ -20,7 +24,7 @@ return require('packer').startup(function()
     use 'yggdroot/indentline'
     use 'scrooloose/nerdcommenter'
     use 'mhinz/vim-signify'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate | :TSInstall bash c css c_sharp dockerfile glimmer html javascript json jsonc lua markdown prisma python query tsx typescript vim vimdoc yaml' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate | :TSInstall bash c css c_sharp dockerfile glimmer html javascript json jsonc lua markdown prisma python query tsx typescript vim vimdoc yaml arduino' }
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
     -- This fork is useful to fix tiagofumo colorscheme bug on icons
     --use 'johnstef99/vim-nerdtree-syntax-highlight/tree/master'
