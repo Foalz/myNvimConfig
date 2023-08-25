@@ -45,10 +45,10 @@ local keymap = vim.api
 	keymap.nvim_set_keymap('n', '<C-w>', '10<C-y>', { noremap = true })
 
 	-- Quick semi-colon
-	keymap.nvim_set_keymap('n', '<Leader>;', '$a;<Esc>', { noremap = true })
+	keymap.nvim_set_keymap('n', '<Leader>,', '$a;<Esc>', { noremap = true })
 
 	-- Toggle NERDTREE
-	keymap.nvim_set_keymap('n', '<Leader>nn', ':NERDTree<CR>', { noremap = true })
+	keymap.nvim_set_keymap('n', '<Leader>nn', ':Neotree<CR>', { noremap = true })
 
 	-- Toggle AG 
 	keymap.nvim_set_keymap('n', '<Leader>p', ':Ag<CR>', { noremap = true })

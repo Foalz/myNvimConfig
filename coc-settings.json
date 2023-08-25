@@ -3,5 +3,6 @@
 	"snippets.extends": {
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }

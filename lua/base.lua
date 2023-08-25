@@ -1,4 +1,4 @@
-vim.cmd[[autocmd VimEnter * NERDTree]]
+vim.cmd[[autocmd VimEnter * Neotree]]
 vim.cmd[[syntax on]]
 vim.cmd[[filetype on]]
 --vim.cmd[[set guifont="BitstreamVeraSansMono"]]
