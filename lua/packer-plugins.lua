@@ -16,6 +16,13 @@ return require('packer').startup(function()
 	--Typing
     use 'tpope/vim-surround'
 
+  --Searcher
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+  -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
 	--IDE
     --use 'christoomey/vim-tmux-navigator'
     use { "alexghergh/nvim-tmux-navigation" }

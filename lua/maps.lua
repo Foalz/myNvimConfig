@@ -1,4 +1,5 @@
 local keymap = vim.api
+local builtin = require('telescope.builtin')
 
 --[TERMINAL MODE]
   
@@ -14,6 +15,12 @@ local keymap = vim.api
 	keymap.nvim_set_keymap('n', '<Leader>w', ':w<CR>', { noremap = true })
 	keymap.nvim_set_keymap('n', '<Leader>q', ':q<CR>', { noremap = true })
 	keymap.nvim_set_keymap('n', '<Leader>e', ':q!<CR>', { noremap = true })
+
+  vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+  vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+  vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+  vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+  vim.keymap.set('n', '<leader>fx', ':Telescope live_grep glob_pattern=*.{}<Left>', {})
 
 	--Find and replace
 	keymap.nvim_set_keymap('n', '<Leader>h', ':%s/', { noremap = true })
@@ -45,7 +52,8 @@ local keymap = vim.api
 	keymap.nvim_set_keymap('n', '<C-w>', '10<C-y>', { noremap = true })
 
 	-- Quick semi-colon
-	keymap.nvim_set_keymap('n', '<Leader>,', '$a;<Esc>', { noremap = true })
+	keymap.nvim_set_keymap('n', '<Leader>;', '$a;<Esc>', { noremap = true })
+	keymap.nvim_set_keymap('n', '<Leader>,', '$a,<Esc>', { noremap = true })
 
 	-- Toggle NERDTREE
 	keymap.nvim_set_keymap('n', '<Leader>nn', ':Neotree<CR>', { noremap = true })
@@ -54,7 +62,7 @@ local keymap = vim.api
 	keymap.nvim_set_keymap('n', '<Leader>p', ':Ag<CR>', { noremap = true })
 
   -- Open new tab in NERDTREE 
-	keymap.nvim_set_keymap('n', ';', ':tabnew<bar> :NERDTree<CR>', { noremap = true })
+	--keymap.nvim_set_keymap('n', ';', ':tabnew<bar> :NERDTree<CR>', { noremap = true })
 
   -- Open terminal in new tab in NERDTREE 
 	--keymap.nvim_set_keymap('n', 'tm', ':tabnew<bar> :terminal <CR> <bar> i', { noremap = true })
@@ -75,7 +83,7 @@ local keymap = vim.api
   keymap.nvim_set_keymap('n', '=', ':tabclose<CR>', { noremap = true })
 
   -- Find
-	keymap.nvim_set_keymap('n', '<Leader>f', '/', { noremap = true })
+	--keymap.nvim_set_keymap('n', '<Leader>f', '/', { noremap = true })
 
   --Show filepath
 	keymap.nvim_set_keymap('n', 'z', '1<C-g>', { noremap = true })
