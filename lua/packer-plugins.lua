@@ -36,7 +36,7 @@ return require('packer').startup(function()
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
     -- This fork is useful to fix tiagofumo colorscheme bug on icons
     --use 'johnstef99/vim-nerdtree-syntax-highlight/tree/master'
-    use 'David-Kunz/markid'
+    use { 'David-Kunz/markid', requires = { 'nvim-treesitter/nvim-treesitter' } }
     use 'ryanoasis/vim-devicons'
     --CSV files
     use 'chrisbra/csv.vim'
