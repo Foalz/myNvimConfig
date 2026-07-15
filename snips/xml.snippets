@@ -1,0 +1,125 @@
+# Odoo: Estructura base de archivo XML
+snippet odata "Odoo Data XML" b
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        ${0}
+    </data>
+</odoo>
+endsnippet
+
+# Odoo: Vista Formulario
+snippet oform "Odoo Form View" b
+<record id="view_${1:model_name}_form" model="ir.ui.view">
+    <field name="name">$1.form</field>
+    <field name="model">${2:model.name}</field>
+    <field name="arch" type="xml">
+        <form string="${3:Form Title}">
+            <sheet>
+                <group>
+                    <field name="${4:name}"/>
+                    ${0}
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+endsnippet
+
+# Odoo: Vista Tree (Lista)
+snippet otree "Odoo Tree View" b
+<record id="view_${1:model_name}_tree" model="ir.ui.view">
+    <field name="name">$1.tree</field>
+    <field name="model">${2:model.name}</field>
+    <field name="arch" type="xml">
+        <tree string="${3:Tree Title}">
+            <field name="${4:name}"/>
+            ${0}
+        </tree>
+    </field>
+</record>
+endsnippet
+
+# Odoo: Vista de Búsqueda
+snippet osearch "Odoo Search View" b
+<record id="view_${1:model_name}_search" model="ir.ui.view">
+    <field name="name">$1.search</field>
+    <field name="model">${2:model.name}</field>
+    <field name="arch" type="xml">
+        <search string="${3:Search Title}">
+            <field name="${4:name}"/>
+            ${0}
+        </search>
+    </field>
+</record>
+endsnippet
+
+# Odoo: Acción de Ventana (Window Action)
+snippet oact "Odoo Window Action" b
+<record id="action_${1:model_name}" model="ir.actions.act_window">
+    <field name="name">${2:Action Name}</field>
+    <field name="res_model">${3:model.name}</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+            Crea tu primer registro de $2
+        </p>
+    </field>
+</record>
+endsnippet
+
+# Odoo: Elementos de Menú
+snippet omenu "Odoo Menu Item" b
+<menuitem id="menu_${1:identifier}"
+          name="${2:Menu Name}"
+          parent="${3:parent_menu_id}"
+          action="${4:action_id}"
+          sequence="${5:10}"/>
+endsnippet
+
+# Odoo: Herencia de Vista (XPath)
+snippet oxpath "Odoo View Inheritance" b
+<record id="view_${1:model}_inherit" model="ir.ui.view">
+    <field name="name">$1.inherit</field>
+    <field name="model">${2:model.name}</field>
+    <field name="inherit_id" ref="${3:module.original_view_id}"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='${4:target_field}']" position="${5:after}">
+            <field name="${6:new_field}"/>
+        </xpath>
+    </field>
+</record>
+endsnippet
+
+# Odoo: Grupo de Seguridad
+snippet ogroup "Odoo Security Group" b
+<record id="group_${1:name}" model="res.groups">
+    <field name="name">${2:Group Name}</field>
+    <field name="category_id" ref="${3:base.module_category_hidden}"/>
+    <field name="implied_ids" eval="[(4, ref('${4:base.group_user}'))]"/>
+    <field name="comment">${5:Descripción o propósito del grupo.}</field>
+</record>
+endsnippet
+
+# Odoo: Categoría de Seguridad (Para agrupar roles en la interfaz)
+snippet ocategory "Odoo Security Category" b
+<record id="module_category_${1:name}" model="ir.module.category">
+    <field name="name">${2:Category Name}</field>
+    <field name="description">${3:Descripción de la categoría.}</field>
+    <field name="sequence">${4:10}</field>
+</record>
+endsnippet
+
+# Odoo: Regla de Registro (Record Rule)
+snippet orule "Odoo Record Rule" b
+<record id="rule_${1:name}" model="ir.rule">
+    <field name="name">${2:Rule Name}</field>
+    <field name="model_id" ref="model_${3:model_name}"/>
+    <field name="domain_force">${4:[('user_id', '=', user.id)]}</field>
+    <field name="groups" eval="[(4, ref('${5:base.group_user}'))]"/>
+    <field name="perm_read" eval="${6:True}"/>
+    <field name="perm_write" eval="${7:True}"/>
+    <field name="perm_create" eval="${8:True}"/>
+    <field name="perm_unlink" eval="${9:True}"/>
+</record>
+endsnippet

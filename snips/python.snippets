@@ -1,0 +1,61 @@
+# Odoo: Modelo Básico
+snippet omodel "Odoo Model" b
+from odoo import models, fields, api
+
+class ${1:ModelName}(models.Model):
+    _name = '${2:model.name}'
+    _description = '${3:Descripción del modelo}'
+
+    name = fields.Char(string='${4:Nombre}', required=True)
+    ${0}
+endsnippet
+
+# Odoo: Modelo Heredado
+snippet oinherit "Odoo Inherited Model" b
+class ${1:ModelName}(models.Model):
+    _inherit = '${2:model.name}'
+
+    ${0}
+endsnippet
+
+# Odoo: Campos Básicos
+snippet fchar "Odoo Char Field" b
+${1:field_name} = fields.Char(string='${2:Label}'${3:, required=True})
+endsnippet
+
+snippet fint "Odoo Integer Field" b
+${1:field_name} = fields.Integer(string='${2:Label}')
+endsnippet
+
+snippet fbool "Odoo Boolean Field" b
+${1:field_name} = fields.Boolean(string='${2:Label}', default=${3:False})
+endsnippet
+
+# Odoo: Campos Relacionales
+snippet fm2o "Odoo Many2one Field" b
+${1:field_name_id} = fields.Many2one(comodel_name='${2:comodel.name}', string='${3:Label}')
+endsnippet
+
+snippet fo2m "Odoo One2many Field" b
+${1:field_name_ids} = fields.One2many(comodel_name='${2:comodel.name}', inverse_name='${3:inverse_field_id}', string='${4:Label}')
+endsnippet
+
+snippet fm2m "Odoo Many2many Field" b
+${1:field_name_ids} = fields.Many2many(comodel_name='${2:comodel.name}', string='${3:Label}')
+endsnippet
+
+# Odoo: Método Compute
+snippet ocompute "Odoo Compute Method" b
+@api.depends('${1:dependencia}')
+def _compute_${2:field_name}(self):
+    for record in self:
+        record.$2 = ${0:False}
+endsnippet
+
+# Odoo: Método Onchange
+snippet oonchange "Odoo Onchange Method" b
+@api.onchange('${1:field_name}')
+def _onchange_$1(self):
+    if self.$1:
+        ${0:pass}
+endsnippet
