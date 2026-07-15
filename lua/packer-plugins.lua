@@ -25,6 +25,31 @@ return require('packer').startup(function()
 
 	--IDE
     --use 'christoomey/vim-tmux-navigator'
+  
+    use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require("diffview").setup({
+        -- Aquí puedes poner configuraciones extra si lo deseas
+      })
+    end
+  }
+
+  -- 2. GITSIGNS (Para los indicadores de color en el margen y GitLens)
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup({
+        current_line_blame = true, -- Muestra quién editó la línea (estilo GitLens)
+        -- Puedes mapear un atajo rápido para previsualizar cambios individuales
+        on_attach = function(bufnr)
+          local gs = package.loaded.gitsigns
+          vim.keymap.set('n', '<leader>hp', gs.preview_hunk, { buffer = bufnr, desc = 'Previsualizar cambio' })
+        end
+      })
+    end
+  }
     use { "alexghergh/nvim-tmux-navigation" }
     use 'junegunn/fzf'
     use 'junegunn/fzf.vim'
@@ -32,11 +57,11 @@ return require('packer').startup(function()
     use 'yggdroot/indentline'
     use 'scrooloose/nerdcommenter'
     use 'mhinz/vim-signify'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate | :TSInstall bash c css c_sharp dockerfile glimmer html javascript json jsonc lua markdown prisma python query tsx typescript vim vimdoc yaml arduino' }
+    --use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate | :TSInstall bash c css c_sharp dockerfile glimmer html javascript json jsonc lua markdown prisma python query tsx typescript vim vimdoc yaml arduino' }
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
     -- This fork is useful to fix tiagofumo colorscheme bug on icons
     --use 'johnstef99/vim-nerdtree-syntax-highlight/tree/master'
-    use { 'David-Kunz/markid', requires = { 'nvim-treesitter/nvim-treesitter' } }
+    --use { 'David-Kunz/markid', requires = { 'nvim-treesitter/nvim-treesitter' } }
     use 'ryanoasis/vim-devicons'
     --CSV files
     use 'chrisbra/csv.vim'

@@ -10,6 +10,50 @@ local builtin = require('telescope.builtin')
 
   --Open a terminal
   --keymap.nvim_set_keymap('n', '<Leader>t', ':50vsp <bar> :terminal <CR>', { noremap = true })
+  --
+  
+-- ---------------------------------------------------------------------
+-- 1. Diffview (Para ver los cambios de todo el proyecto estilo VS Code)
+-- ---------------------------------------------------------------------
+
+-- Abrir la interfaz gráfica del Diff de Git (Ver todos los archivos modificados)
+vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "Git: Abrir Diffview" })
+
+-- Cerrar la interfaz del Diff y volver a tus archivos normales
+vim.keymap.set("n", "<leader>gq", "<cmd>DiffviewClose<CR>", { desc = "Git: Cerrar Diffview" })
+
+-- Ver el historial de cambios del archivo actual (Súper útil para auditorías)
+vim.keymap.set("n", "<leader>gh", "<cmd>DiffviewFileHistory %<CR>", { desc = "Git: Historial de este archivo" })
+
+-- ---------------------------------------------------------------------
+-- 2. Gitsigns (Navegación y acciones rápidas línea por línea)
+-- ---------------------------------------------------------------------
+
+-- Saltars al siguiente cambio (hunk)
+vim.keymap.set("n", "]c", function()
+  if vim.wo.diff then return "]c" end
+  vim.schedule(function() require("gitsigns").next_hunk() end)
+  return "<Ignore>"
+end, { expr = true, desc = "Git: Siguiente cambio" })
+
+-- Retroceder al cambio anterior (hunk)
+vim.keymap.set("n", "[c", function()
+  if vim.wo.diff then return "[c" end
+  vim.schedule(function() require("gitsigns").prev_hunk() end)
+  return "<Ignore>"
+end, { expr = true, desc = "Git: Cambio anterior" })
+
+-- Previsualizar el cambio de la línea actual en un popup flotante (Estilo VS Code peek)
+vim.keymap.set("n", "<leader>gp", function() require("gitsigns").preview_hunk() end, { desc = "Git: Previsualizar línea" })
+
+-- Ver quién modificó la línea actual en un popup flotante (Git Blame / GitLens)
+vim.keymap.set("n", "<leader>gb", function() require("gitsigns").blame_line({ full = true }) end, { desc = "Git: Mostrar Blame" })
+
+-- Deshacer/Resetear solo el cambio de la línea actual (¡Cuidado, esto borra el cambio físico!)
+vim.keymap.set("n", "<leader>gr", function() require("gitsigns").reset_hunk() end, { desc = "Git: Resetear línea actual" })
+
+-- Preparar (Stage/git add) solo el cambio de la línea actual
+vim.keymap.set("n", "<leader>gs", function() require("gitsigns").stage_hunk() end, { desc = "Git: Stage de la línea actual" })
 
 	--Saving and quit
 	keymap.nvim_set_keymap('n', '<Leader>w', ':w<CR>', { noremap = true })
@@ -67,11 +111,12 @@ local builtin = require('telescope.builtin')
   -- Open terminal in new tab in NERDTREE 
 	--keymap.nvim_set_keymap('n', 'tm', ':tabnew<bar> :terminal <CR> <bar> i', { noremap = true })
 
-  keymap.nvim_set_keymap('n', '1<Leader>t', ':1:ToggleTerm<CR>i', { noremap = true })
-  keymap.nvim_set_keymap('n', '2<Leader>t', ':2:ToggleTerm<CR>i', { noremap = true })
-  keymap.nvim_set_keymap('n', '3<Leader>t', ':3:ToggleTerm<CR>i', { noremap = true })
-  keymap.nvim_set_keymap('n', '1<Leader>t', ':1:ToggleTerm<CR>i', { noremap = true })
-  keymap.nvim_set_keymap('n', '<C-5>', ':1:ToggleTerm<CR>i', { noremap = true })
+  keymap.nvim_set_keymap('n', '1<Leader>t', ':1:ToggleTerm direction=vertical size=45<CR>', { noremap = true })
+  keymap.nvim_set_keymap('n', '2<Leader>t', ':2:ToggleTerm direction=horizontal size=12<CR>', { noremap = true })
+  keymap.nvim_set_keymap('n', '3<Leader>t', ':3:ToggleTerm direction=float<CR>', { noremap = true })
+
+  -- Validar XML actual usando ToggleTerm flotante
+  keymap.nvim_set_keymap('n', '<Leader>xv', ':w <bar> TermExec cmd="xmllint --noout %" direction=float<CR><esc>', { noremap = true, silent = true })
 
   -- Left tab in NERDTREE 
 	keymap.nvim_set_keymap('n', ',', ':tabprevious<CR>', { noremap = true })
