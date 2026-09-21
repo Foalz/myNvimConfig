@@ -50,6 +50,14 @@ return require('packer').startup(function()
       })
     end
   }
+  -- 3. GIT-CONFLICT (Resolver conflictos de merge dentro del buffer)
+  use {
+    'akinsho/git-conflict.nvim',
+    config = function()
+      require('git-conflict').setup()
+    end
+  }
+
     use { "alexghergh/nvim-tmux-navigation" }
     use 'junegunn/fzf'
     use 'junegunn/fzf.vim'

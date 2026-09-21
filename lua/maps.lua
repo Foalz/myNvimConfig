@@ -115,6 +115,8 @@ vim.keymap.set("n", "<leader>gs", function() require("gitsigns").stage_hunk() en
   keymap.nvim_set_keymap('n', '2<Leader>t', ':2:ToggleTerm direction=horizontal size=12<CR>', { noremap = true })
   keymap.nvim_set_keymap('n', '3<Leader>t', ':3:ToggleTerm direction=float<CR>', { noremap = true })
 
+  -- Lazygit: ver plugin/toggleterm.lua (<Leader>lg)
+
   -- Validar XML actual usando ToggleTerm flotante
   keymap.nvim_set_keymap('n', '<Leader>xv', ':w <bar> TermExec cmd="xmllint --noout %" direction=float<CR><esc>', { noremap = true, silent = true })
 
