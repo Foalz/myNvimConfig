@@ -51,6 +51,10 @@ return require('packer').startup(function()
     end
   }
   -- 3. GIT-CONFLICT (Resolver conflictos de merge dentro del buffer)
+  -- OJO: upstream tiene un bug (PR #94 sin mergear) que rompe el plugin cuando
+  -- neo-tree esta abierto: pinta los conflictos en el buffer equivocado y aborta.
+  -- El fix esta aplicado a mano en ~/.local/share/nvim/site/pack/packer/start/
+  -- git-conflict.nvim/lua/git-conflict.lua -> por eso PackerUpdate falla ahi.
   use {
     'akinsho/git-conflict.nvim',
     config = function()
