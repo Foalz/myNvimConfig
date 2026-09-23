@@ -6,7 +6,7 @@ return require('packer').startup(function()
     use {
       'neoclide/coc.nvim',
       branch = 'release',
-      run = ':CocInstall coc-json coc-tsserver coc-snippets coc-html coc-xml coc-yaml coc-html-css-support'
+      run = ':CocInstall coc-json coc-tsserver coc-snippets coc-html coc-xml coc-yaml coc-html-css-support coc-pyright coc-diagnostic'
     }
   --Terminal
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -79,11 +79,12 @@ return require('packer').startup(function()
     use 'chrisbra/csv.vim'
 
 
-	--Themes 
+	--Themes
     use 'morhetz/gruvbox'
     use 'tomasiser/vim-code-dark'
     use 'tomasr/molokai'
     use 'arcticicestudio/nord-vim'
+    use 'Mofiqul/dracula.nvim'
 
 	-- File Explorer
     --use 'scrooloose/NERDTree'

@@ -63,5 +63,44 @@
       "literals": ["node_modules"]
     },
     "explorer.mouseMode": "singleclick",
-    "explorer.debug": true
+    "explorer.debug": true,
+
+    "python.linting.enabled": true,
+
+    "pyright.inlayHints.variableTypes": false,
+    "pyright.inlayHints.functionReturnTypes": false,
+
+    "diagnostic-languageserver.filetypes": {
+      "python": ["ruff"]
+    },
+    "diagnostic-languageserver.linters": {
+      "ruff": {
+        "command": "ruff",
+        "args": ["check", "--select", "E,W,F,I", "--output-format", "json", "-"],
+        "sourceName": "ruff",
+        "stdin": true,
+        "parseJson": {
+          "line": "location.row",
+          "column": "location.column",
+          "endLine": "end_location.row",
+          "endColumn": "end_location.column",
+          "message": "${message} [${code}]",
+          "security": "fix.applicability"
+        },
+        "securities": {
+          "safe": "warning",
+          "unsafe": "warning",
+          "display-only": "info"
+        }
+      }
+    },
+    "diagnostic-languageserver.formatFiletypes": {
+      "python": ["ruff-format"]
+    },
+    "diagnostic-languageserver.formatters": {
+      "ruff-format": {
+        "command": "ruff",
+        "args": ["format", "-"]
+      }
+    }
 }
