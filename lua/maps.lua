@@ -55,6 +55,24 @@ vim.keymap.set("n", "<leader>gr", function() require("gitsigns").reset_hunk() en
 -- Preparar (Stage/git add) solo el cambio de la línea actual
 vim.keymap.set("n", "<leader>gs", function() require("gitsigns").stage_hunk() end, { desc = "Git: Stage de la línea actual" })
 
+-- ---------------------------------------------------------------------
+-- 3. Flash.nvim (Saltar a cualquier posición visible)
+-- ---------------------------------------------------------------------
+vim.keymap.set({"n", "x", "o"}, "gl", function() require("flash").jump() end, { desc = "Flash: Saltar" })
+vim.keymap.set({"n", "x", "o"}, "gL", function() require("flash").treesitter() end, { desc = "Flash: Seleccionar por TreeSitter" })
+
+-- ---------------------------------------------------------------------
+-- 4. Todo-comments (Buscar TODOs en el proyecto)
+-- ---------------------------------------------------------------------
+vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "TODO: Buscar todos los TODO/FIXME" })
+vim.keymap.set("n", "]t", function() require("todo-comments").jump_next() end, { desc = "TODO: Siguiente" })
+vim.keymap.set("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "TODO: Anterior" })
+
+-- ---------------------------------------------------------------------
+-- 5. Glow (Previsualizar Markdown renderizado)
+-- ---------------------------------------------------------------------
+vim.keymap.set("n", "<leader>md", "<cmd>Glow<CR>", { desc = "Markdown: Preview con Glow" })
+
 	--Saving and quit
 	keymap.nvim_set_keymap('n', '<Leader>w', ':w<CR>', { noremap = true })
 	keymap.nvim_set_keymap('n', '<Leader>q', ':q<CR>', { noremap = true })
@@ -102,8 +120,6 @@ vim.keymap.set("n", "<leader>gs", function() require("gitsigns").stage_hunk() en
 	-- Toggle NERDTREE
 	keymap.nvim_set_keymap('n', '<Leader>nn', ':Neotree<CR>', { noremap = true })
 
-	-- Toggle AG 
-	keymap.nvim_set_keymap('n', '<Leader>p', ':Ag<CR>', { noremap = true })
 
   -- Open new tab in NERDTREE 
 	--keymap.nvim_set_keymap('n', ';', ':tabnew<bar> :NERDTree<CR>', { noremap = true })

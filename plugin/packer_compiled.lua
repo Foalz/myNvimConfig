@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/jesus/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
-  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/coc.nvim",
@@ -96,10 +91,15 @@ _G.packer_plugins = {
     url = "https://github.com/sindrets/diffview.nvim"
   },
   ["dracula.nvim"] = {
-    config = { "\27LJ\2\n\\\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\19italic_comment\2\19transparent_bg\2\nsetup\fdracula\frequire\0" },
     loaded = true,
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
+  },
+  ["flash.nvim"] = {
+    config = { "\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nflash\frequire\0" },
+    loaded = true,
+    path = "/home/jesus/.local/share/nvim/site/pack/packer/start/flash.nvim",
+    url = "https://github.com/folke/flash.nvim"
   },
   fzf = {
     loaded = true,
@@ -118,10 +118,16 @@ _G.packer_plugins = {
     url = "https://github.com/akinsho/git-conflict.nvim"
   },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\2\n®\1\0\1\b\0\v\0\r6\1\0\0009\1\1\0019\1\2\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\a\0009\6\b\0015\a\t\0=\0\n\aB\2\5\1K\0\1\0\vbuffer\1\0\2\vbuffer\0\tdesc\25Previsualizar cambio\17preview_hunk\15<leader>hp\6n\bset\vkeymap\bvim\rgitsigns\vloaded\fpackageo\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0003\3\4\0=\3\5\2B\0\2\1K\0\1\0\14on_attach\0\1\0\2\14on_attach\0\23current_line_blame\2\nsetup\rgitsigns\frequire\0" },
+    config = { "\27LJ\2\n®\1\0\1\b\0\v\0\r6\1\0\0009\1\1\0019\1\2\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\a\0009\6\b\0015\a\t\0=\0\n\aB\2\5\1K\0\1\0\vbuffer\1\0\2\tdesc\25Previsualizar cambio\vbuffer\0\17preview_hunk\15<leader>hp\6n\bset\vkeymap\bvim\rgitsigns\vloaded\fpackageo\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0003\3\4\0=\3\5\2B\0\2\1K\0\1\0\14on_attach\0\1\0\2\14on_attach\0\23current_line_blame\2\nsetup\rgitsigns\frequire\0" },
     loaded = true,
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["glow.nvim"] = {
+    config = { "\27LJ\2\nw\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\vborder\frounded\17height_ratio\4≥ÊÃô\3≥Ê¨ˇ\3\16width_ratio\4≥ÊÃô\3≥Ê¨ˇ\3\nsetup\tglow\frequire\0" },
+    loaded = true,
+    path = "/home/jesus/.local/share/nvim/site/pack/packer/start/glow.nvim",
+    url = "https://github.com/ellisonleao/glow.nvim"
   },
   gruvbox = {
     loaded = true,
@@ -144,7 +150,7 @@ _G.packer_plugins = {
     url = "https://github.com/tomasr/molokai"
   },
   ["neo-tree.nvim"] = {
-    config = { "\27LJ\2\nõ\3\0\0\4\0\r\0\0296\0\0\0009\0\1\0009\0\2\0'\2\3\0005\3\4\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\5\0005\3\6\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\a\0005\3\b\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\t\0005\3\n\0B\0\3\0016\0\0\0009\0\v\0'\2\f\0B\0\2\1K\0\1\0#nnoremap \\ :Neotree reveal<cr>\bcmd\1\0\2\vtexthl\23DiagnosticSignHint\ttext\tÛ∞åµ\23DiagnosticSignHint\1\0\2\vtexthl\23DiagnosticSignInfo\ttext\tÔÅö \23DiagnosticSignInfo\1\0\2\vtexthl\23DiagnosticSignWarn\ttext\tÔÅ± \23DiagnosticSignWarn\1\0\2\vtexthl\24DiagnosticSignError\ttext\tÔÅó \24DiagnosticSignError\16sign_define\afn\bvim\0" },
+    config = { "\27LJ\2\nõ\3\0\0\4\0\r\0\0296\0\0\0009\0\1\0009\0\2\0'\2\3\0005\3\4\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\5\0005\3\6\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\a\0005\3\b\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\t\0005\3\n\0B\0\3\0016\0\0\0009\0\v\0'\2\f\0B\0\2\1K\0\1\0#nnoremap \\ :Neotree reveal<cr>\bcmd\1\0\2\ttext\tÛ∞åµ\vtexthl\23DiagnosticSignHint\23DiagnosticSignHint\1\0\2\ttext\tÔÅö \vtexthl\23DiagnosticSignInfo\23DiagnosticSignInfo\1\0\2\ttext\tÔÅ± \vtexthl\23DiagnosticSignWarn\23DiagnosticSignWarn\1\0\2\ttext\tÔÅó \vtexthl\24DiagnosticSignError\24DiagnosticSignError\16sign_define\afn\bvim\0" },
     loaded = true,
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
@@ -174,13 +180,18 @@ _G.packer_plugins = {
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/nvim-tmux-navigation",
     url = "https://github.com/alexghergh/nvim-tmux-navigation"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/jesus/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["nvim-window-picker"] = {
-    config = { "\27LJ\2\n£\2\0\0\6\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\t\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\4=\4\n\3=\3\v\2B\0\2\1K\0\1\0\17filter_rules\abo\1\0\1\abo\0\fbuftype\1\3\0\0\rterminal\rquickfix\rfiletype\1\0\2\fbuftype\0\rfiletype\0\1\4\0\0\rneo-tree\19neo-tree-popup\vnotify\1\0\4\20include_current\1\19autoselect_one\2\23other_win_hl_color\f#e35e4f\17filter_rules\0\nsetup\18window-picker\frequire\0" },
+    config = { "\27LJ\2\n£\2\0\0\6\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\t\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\4=\4\n\3=\3\v\2B\0\2\1K\0\1\0\17filter_rules\abo\1\0\1\abo\0\fbuftype\1\3\0\0\rterminal\rquickfix\rfiletype\1\0\2\fbuftype\0\rfiletype\0\1\4\0\0\rneo-tree\19neo-tree-popup\vnotify\1\0\4\17filter_rules\0\20include_current\1\19autoselect_one\2\23other_win_hl_color\f#e35e4f\nsetup\18window-picker\frequire\0" },
     loaded = true,
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/nvim-window-picker",
     url = "https://github.com/s1n7ax/nvim-window-picker"
@@ -200,10 +211,11 @@ _G.packer_plugins = {
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  the_silver_searcher = {
+  ["todo-comments.nvim"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0" },
     loaded = true,
-    path = "/home/jesus/.local/share/nvim/site/pack/packer/start/the_silver_searcher",
-    url = "https://github.com/ggreer/the_silver_searcher"
+    path = "/home/jesus/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["toggleterm.nvim"] = {
     config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
@@ -226,52 +238,60 @@ _G.packer_plugins = {
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/vim-multiple-cursors",
     url = "https://github.com/terryma/vim-multiple-cursors"
   },
-  ["vim-nerdtree-syntax-highlight"] = {
-    loaded = true,
-    path = "/home/jesus/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
-    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
-  },
-  ["vim-signify"] = {
-    loaded = true,
-    path = "/home/jesus/.local/share/nvim/site/pack/packer/start/vim-signify",
-    url = "https://github.com/mhinz/vim-signify"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/jesus/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14which-key\frequire\0" },
+    loaded = true,
+    path = "/home/jesus/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: dracula.nvim
-time([[Config for dracula.nvim]], true)
-try_loadstring("\27LJ\2\n\\\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\19italic_comment\2\19transparent_bg\2\nsetup\fdracula\frequire\0", "config", "dracula.nvim")
-time([[Config for dracula.nvim]], false)
--- Config for: diffview.nvim
-time([[Config for diffview.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rdiffview\frequire\0", "config", "diffview.nvim")
-time([[Config for diffview.nvim]], false)
--- Config for: nvim-window-picker
-time([[Config for nvim-window-picker]], true)
-try_loadstring("\27LJ\2\n£\2\0\0\6\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\t\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\4=\4\n\3=\3\v\2B\0\2\1K\0\1\0\17filter_rules\abo\1\0\1\abo\0\fbuftype\1\3\0\0\rterminal\rquickfix\rfiletype\1\0\2\fbuftype\0\rfiletype\0\1\4\0\0\rneo-tree\19neo-tree-popup\vnotify\1\0\4\20include_current\1\19autoselect_one\2\23other_win_hl_color\f#e35e4f\17filter_rules\0\nsetup\18window-picker\frequire\0", "config", "nvim-window-picker")
-time([[Config for nvim-window-picker]], false)
 -- Config for: git-conflict.nvim
 time([[Config for git-conflict.nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17git-conflict\frequire\0", "config", "git-conflict.nvim")
 time([[Config for git-conflict.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n®\1\0\1\b\0\v\0\r6\1\0\0009\1\1\0019\1\2\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\a\0009\6\b\0015\a\t\0=\0\n\aB\2\5\1K\0\1\0\vbuffer\1\0\2\vbuffer\0\tdesc\25Previsualizar cambio\17preview_hunk\15<leader>hp\6n\bset\vkeymap\bvim\rgitsigns\vloaded\fpackageo\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0003\3\4\0=\3\5\2B\0\2\1K\0\1\0\14on_attach\0\1\0\2\14on_attach\0\23current_line_blame\2\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+try_loadstring("\27LJ\2\n®\1\0\1\b\0\v\0\r6\1\0\0009\1\1\0019\1\2\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\a\0009\6\b\0015\a\t\0=\0\n\aB\2\5\1K\0\1\0\vbuffer\1\0\2\tdesc\25Previsualizar cambio\vbuffer\0\17preview_hunk\15<leader>hp\6n\bset\vkeymap\bvim\rgitsigns\vloaded\fpackageo\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0003\3\4\0=\3\5\2B\0\2\1K\0\1\0\14on_attach\0\1\0\2\14on_attach\0\23current_line_blame\2\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: neo-tree.nvim
-time([[Config for neo-tree.nvim]], true)
-try_loadstring("\27LJ\2\nõ\3\0\0\4\0\r\0\0296\0\0\0009\0\1\0009\0\2\0'\2\3\0005\3\4\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\5\0005\3\6\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\a\0005\3\b\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\t\0005\3\n\0B\0\3\0016\0\0\0009\0\v\0'\2\f\0B\0\2\1K\0\1\0#nnoremap \\ :Neotree reveal<cr>\bcmd\1\0\2\vtexthl\23DiagnosticSignHint\ttext\tÛ∞åµ\23DiagnosticSignHint\1\0\2\vtexthl\23DiagnosticSignInfo\ttext\tÔÅö \23DiagnosticSignInfo\1\0\2\vtexthl\23DiagnosticSignWarn\ttext\tÔÅ± \23DiagnosticSignWarn\1\0\2\vtexthl\24DiagnosticSignError\ttext\tÔÅó \24DiagnosticSignError\16sign_define\afn\bvim\0", "config", "neo-tree.nvim")
-time([[Config for neo-tree.nvim]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
+-- Config for: flash.nvim
+time([[Config for flash.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nflash\frequire\0", "config", "flash.nvim")
+time([[Config for flash.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: glow.nvim
+time([[Config for glow.nvim]], true)
+try_loadstring("\27LJ\2\nw\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\vborder\frounded\17height_ratio\4≥ÊÃô\3≥Ê¨ˇ\3\16width_ratio\4≥ÊÃô\3≥Ê¨ˇ\3\nsetup\tglow\frequire\0", "config", "glow.nvim")
+time([[Config for glow.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: neo-tree.nvim
+time([[Config for neo-tree.nvim]], true)
+try_loadstring("\27LJ\2\nõ\3\0\0\4\0\r\0\0296\0\0\0009\0\1\0009\0\2\0'\2\3\0005\3\4\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\5\0005\3\6\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\a\0005\3\b\0B\0\3\0016\0\0\0009\0\1\0009\0\2\0'\2\t\0005\3\n\0B\0\3\0016\0\0\0009\0\v\0'\2\f\0B\0\2\1K\0\1\0#nnoremap \\ :Neotree reveal<cr>\bcmd\1\0\2\ttext\tÛ∞åµ\vtexthl\23DiagnosticSignHint\23DiagnosticSignHint\1\0\2\ttext\tÔÅö \vtexthl\23DiagnosticSignInfo\23DiagnosticSignInfo\1\0\2\ttext\tÔÅ± \vtexthl\23DiagnosticSignWarn\23DiagnosticSignWarn\1\0\2\ttext\tÔÅó \vtexthl\24DiagnosticSignError\24DiagnosticSignError\16sign_define\afn\bvim\0", "config", "neo-tree.nvim")
+time([[Config for neo-tree.nvim]], false)
+-- Config for: nvim-window-picker
+time([[Config for nvim-window-picker]], true)
+try_loadstring("\27LJ\2\n£\2\0\0\6\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\t\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\4=\4\n\3=\3\v\2B\0\2\1K\0\1\0\17filter_rules\abo\1\0\1\abo\0\fbuftype\1\3\0\0\rterminal\rquickfix\rfiletype\1\0\2\fbuftype\0\rfiletype\0\1\4\0\0\rneo-tree\19neo-tree-popup\vnotify\1\0\4\17filter_rules\0\20include_current\1\19autoselect_one\2\23other_win_hl_color\f#e35e4f\nsetup\18window-picker\frequire\0", "config", "nvim-window-picker")
+time([[Config for nvim-window-picker]], false)
+-- Config for: diffview.nvim
+time([[Config for diffview.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rdiffview\frequire\0", "config", "diffview.nvim")
+time([[Config for diffview.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

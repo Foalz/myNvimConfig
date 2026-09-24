@@ -18,8 +18,7 @@ return require('packer').startup(function()
 
   --Searcher
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.5',
-  -- or                            , branch = '0.1.x',
+    'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
@@ -68,12 +67,7 @@ return require('packer').startup(function()
     use 'terryma/vim-multiple-cursors'
     use 'yggdroot/indentline'
     use 'scrooloose/nerdcommenter'
-    use 'mhinz/vim-signify'
-    --use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate | :TSInstall bash c css c_sharp dockerfile glimmer html javascript json jsonc lua markdown prisma python query tsx typescript vim vimdoc yaml arduino' }
-    use 'tiagofumo/vim-nerdtree-syntax-highlight'
-    -- This fork is useful to fix tiagofumo colorscheme bug on icons
-    --use 'johnstef99/vim-nerdtree-syntax-highlight/tree/master'
-    --use { 'David-Kunz/markid', requires = { 'nvim-treesitter/nvim-treesitter' } }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'ryanoasis/vim-devicons'
     --CSV files
     use 'chrisbra/csv.vim'
@@ -133,11 +127,44 @@ return require('packer').startup(function()
   }
 
 	-- Auto pairs for '(' '[' '{'
-    use 'jiangmiao/auto-pairs'
     use 'windwp/nvim-autopairs'
 
-	--Finding words in project
-    use 'ggreer/the_silver_searcher'    
+    -- Navigation
+    use {
+      'folke/flash.nvim',
+      config = function()
+        require('flash').setup()
+      end
+    }
+
+    -- Keybinding helper
+    use {
+      'folke/which-key.nvim',
+      config = function()
+        require('which-key').setup()
+      end
+    }
+
+    -- TODO/FIXME/HACK highlights
+    use {
+      'folke/todo-comments.nvim',
+      requires = 'nvim-lua/plenary.nvim',
+      config = function()
+        require('todo-comments').setup()
+      end
+    }
+
+    -- Markdown preview in terminal
+    use {
+      'ellisonleao/glow.nvim',
+      config = function()
+        require('glow').setup({
+          border = 'rounded',
+          width_ratio = 0.85,
+          height_ratio = 0.85,
+        })
+      end
+    }
 
 	--statusline
     use {
